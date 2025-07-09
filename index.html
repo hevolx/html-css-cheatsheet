@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cheatsheet</title>
+    </head>
+    <body>
+        <header>
+            <h1>Web Development Cheatsheets</h1>
+            <nav>
+                <ul>
+                    <li><a href>HTML</a></li>
+                    <li><a href>CSS</a></li>
+                    <li><a href>JS</a></li>
+                    <li><a href>DOM</a></li>
+                    <li><a href>Git</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="html">
+            <h2>HTML Cheatsheet</h2>
+            <article>
+                <h3>@font-face</h3>
+            </article>
+
+            <article>
+            </article>
+        </section>
+
+        <section id="css">
+            <h2>CSS Cheatsheet</h2>
+            <article>
+                <h3></h3>
+            </article>
+        </section>
+
+        <section id="js">
+            <h2>JavaScript Cheatsheet</h2>
+            <article>
+                <h3></h3>
+            </article>
+        </section>
+        
+        <section id="dom">
+            <h2>DOM Cheatsheet</h2>
+            <article>
+                <h3></h3>
+            </article>
+        </section>
+
+        <section id="git">
+            <h2>Git Cheatsheet</h2>
+            <article>
+                <h3>Stage & Snapshot</h3>
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git status
+                    </pre>                
+                    <p class="explanation">show modified files in working directory, staged for your next commit</p>
+                </div>
+
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git add [file]
+                    </pre>                
+                    <p class="explanation">add a file as it looks now to your next commit (stage)</p>
+                </div>
+
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git commit -m "[message]"
+                    </pre>                
+                    <p class="explanation">commit your staged content as a new commit snapshot</p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Branching & Merging</h3>
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git branch
+                    </pre>                
+                    <p class="explanation">list your branches. a <strong>*</strong> will appear next to the currently active branch</p>
+                </div>
+
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git branch <strong>-M</strong> main
+                    </pre>                
+                    <p class="explanation">renames the current branch (usually master) to main</p>
+                </div>
+
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git branch [branch-name]
+                    </pre>                
+                    <p class="explanation">create a new branch at the current commit</p>
+                </div>
+
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git checkout [branch-name]
+                    </pre>                
+                    <p class="explanation">switch to another branch and check it out into your working directory</p>
+                </div>
+
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git merge [branch-name]
+                    </pre>                
+                    <p class="explanation">merge the specified branch’s history into the current one</p>
+                </div>
+
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git log
+                    </pre>                
+                    <p class="explanation">show all commits in the current branch’s history</p>
+                </div>
+
+                <h3>Share & Update</h3>
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git remote add [alias] [repository-url]
+                    </pre>                
+                    <p class="explanation">add a git URL as an alias</p>
+                </div>
+
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git fetch [alias]
+                    </pre>                
+                    <p class="explanation">fetch down all the branches from that Git remote</p>
+                </div>
+
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git push [alias] [branch-name]
+                    </pre>                
+                    <p class="explanation">Transmit local branch commits to the remote repository branch</p>
+                </div>
+
+                <div class="cheatsheet">
+                    <pre class="code">
+                        git push -set--upstream origin main
+                    </pre>                
+                    <p class="explanation">Sets it as the upstream tracking branch for future pushes and pulls</p>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>
