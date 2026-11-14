@@ -1,154 +1,333 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Cheatsheet</title>
-        <meta charset="utf-8>
-        <link href="styles.css" type="text/css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <h1>Web Development Cheatsheets</h1>
-            <nav>
-                <ul>
-                    <li><a href>HTML</a></li>
-                    <li><a href>CSS</a></li>
-                    <li><a href>JS</a></li>
-                    <li><a href>DOM</a></li>
-                    <li><a href>Git</a></li>
-                </ul>
-            </nav>
-        </header>
-        
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Development Cheatsheets</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Web Development Cheatsheets</h1>
+        <nav aria-label="Cheatsheets">
+            <ul>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#css">CSS</a></li>
+                <li><a href="#js">JS</a></li>
+                <li><a href="#dom">DOM</a></li>
+                <li><a href="#git">Git</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
         <section id="html">
             <h2>HTML Cheatsheet</h2>
             <article>
-                <h3>@font-face</h3>
+                <h3>Document structure</h3>
+                <div class="cheatsheet">
+                    <pre class="code">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;...&lt;/head&gt;
+  &lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;</pre>
+                    <p class="explanation">the basic skeleton of every HTML page. <strong>lang</strong> helps screen readers and search engines</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">&lt;meta charset="utf-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</pre>
+                    <p class="explanation">set the character encoding and make the page scale correctly on mobile</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">&lt;link href="styles.css" rel="stylesheet"&gt;</pre>
+                    <p class="explanation">link an external stylesheet (goes in &lt;head&gt;)</p>
+                </div>
             </article>
 
             <article>
+                <h3>Text &amp; links</h3>
+                <div class="cheatsheet">
+                    <pre class="code">&lt;h1&gt;...&lt;/h1&gt; to &lt;h6&gt;...&lt;/h6&gt;</pre>
+                    <p class="explanation">headings, from most to least important. use one &lt;h1&gt; per page</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">&lt;p&gt;text&lt;/p&gt;
+&lt;strong&gt;important&lt;/strong&gt;
+&lt;em&gt;emphasis&lt;/em&gt;</pre>
+                    <p class="explanation">paragraph, strong importance (bold) and emphasis (italic)</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">&lt;a href="[url]"&gt;link text&lt;/a&gt;</pre>
+                    <p class="explanation">create a link. use <strong>#id</strong> as the url to jump to an element on the same page</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">&lt;img src="[file]" alt="[description]"&gt;</pre>
+                    <p class="explanation">show an image. always write an <strong>alt</strong> text</p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Lists &amp; forms</h3>
+                <div class="cheatsheet">
+                    <pre class="code">&lt;ul&gt;&lt;li&gt;item&lt;/li&gt;&lt;/ul&gt;
+&lt;ol&gt;&lt;li&gt;item&lt;/li&gt;&lt;/ol&gt;</pre>
+                    <p class="explanation">unordered (bullets) and ordered (numbers) list</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">&lt;label for="name"&gt;Name&lt;/label&gt;
+&lt;input id="name" type="text" required&gt;</pre>
+                    <p class="explanation">a text field with a label connected through <strong>for</strong> and <strong>id</strong></p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">&lt;button type="submit"&gt;Send&lt;/button&gt;</pre>
+                    <p class="explanation">a button. inside a &lt;form&gt; it submits the form</p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Semantic elements</h3>
+                <div class="cheatsheet">
+                    <pre class="code">&lt;header&gt; &lt;nav&gt; &lt;main&gt;
+&lt;section&gt; &lt;article&gt; &lt;footer&gt;</pre>
+                    <p class="explanation">elements that describe the meaning of the content, better than a pile of &lt;div&gt;s</p>
+                </div>
             </article>
         </section>
 
         <section id="css">
             <h2>CSS Cheatsheet</h2>
             <article>
-                <h3></h3>
+                <h3>Selectors</h3>
+                <div class="cheatsheet">
+                    <pre class="code">p { }   .class { }   #id { }</pre>
+                    <p class="explanation">select by element, class or id</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">ul li { }   ul &gt; li { }   a:hover { }</pre>
+                    <p class="explanation">descendant, direct child and the hover state</p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Box model &amp; layout</h3>
+                <div class="cheatsheet">
+                    <pre class="code">margin: 1em;
+padding: 1em;
+border: 1px solid black;</pre>
+                    <p class="explanation">space outside, space inside and the border of an element</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">box-sizing: border-box;</pre>
+                    <p class="explanation">include padding and border in the element's width and height</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">display: flex;
+justify-content: center;
+align-items: center;
+gap: 1em;</pre>
+                    <p class="explanation">flexbox: lay out children in a row and center them with spacing</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">display: grid;
+grid-template-columns: repeat(3, 1fr);</pre>
+                    <p class="explanation">grid: three equally wide columns</p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Text &amp; color</h3>
+                <div class="cheatsheet">
+                    <pre class="code">color: #333;
+background-color: whitesmoke;</pre>
+                    <p class="explanation">text color and background color</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">font-family: "Lucida Grande", sans-serif;</pre>
+                    <p class="explanation">font list. the browser uses the first one available</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">@font-face {
+  font-family: "MyFont";
+  src: url("myfont.woff2");
+}</pre>
+                    <p class="explanation">load your own font file</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">@media (max-width: 600px) { }</pre>
+                    <p class="explanation">apply styles only on screens that are 600px wide or less</p>
+                </div>
             </article>
         </section>
 
         <section id="js">
             <h2>JavaScript Cheatsheet</h2>
             <article>
-                <h3></h3>
+                <h3>Variables &amp; functions</h3>
+                <div class="cheatsheet">
+                    <pre class="code">const name = "Ada";
+let count = 0;</pre>
+                    <p class="explanation"><strong>const</strong> can't be reassigned, <strong>let</strong> can. avoid <strong>var</strong></p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">function add(a, b) { return a + b; }
+const add = (a, b) =&gt; a + b;</pre>
+                    <p class="explanation">a function declaration and the same as an arrow function</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">`Hello ${name}!`</pre>
+                    <p class="explanation">template literal: put variables straight into a string</p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Control flow</h3>
+                <div class="cheatsheet">
+                    <pre class="code">if (x &gt; 0) { } else { }</pre>
+                    <p class="explanation">run code depending on a condition. compare with <strong>===</strong></p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">for (let i = 0; i &lt; 5; i++) { }
+for (const item of list) { }</pre>
+                    <p class="explanation">a counting loop and a loop over every item in a list</p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Arrays &amp; objects</h3>
+                <div class="cheatsheet">
+                    <pre class="code">list.push(x)   list.length</pre>
+                    <p class="explanation">add an item at the end, and get the number of items</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">list.map(x =&gt; x * 2)
+list.filter(x =&gt; x &gt; 1)</pre>
+                    <p class="explanation">make a new list by transforming or filtering every item</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">const user = { name: "Ada", age: 36 };
+user.name</pre>
+                    <p class="explanation">an object with properties, read with dot notation</p>
+                </div>
             </article>
         </section>
-        
+
         <section id="dom">
             <h2>DOM Cheatsheet</h2>
             <article>
-                <h3></h3>
+                <h3>Selecting elements</h3>
+                <div class="cheatsheet">
+                    <pre class="code">document.querySelector(".class")</pre>
+                    <p class="explanation">get the first element matching a CSS selector</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">document.querySelectorAll("li")</pre>
+                    <p class="explanation">get all matching elements</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">document.getElementById("id")</pre>
+                    <p class="explanation">get an element by its id</p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Changing elements</h3>
+                <div class="cheatsheet">
+                    <pre class="code">el.textContent = "New text";</pre>
+                    <p class="explanation">change the text of an element (safe, no HTML parsing)</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">el.classList.add("active");
+el.classList.toggle("hidden");</pre>
+                    <p class="explanation">add a class, or add/remove it depending on whether it exists</p>
+                </div>
+                <div class="cheatsheet">
+                    <pre class="code">const li = document.createElement("li");
+list.append(li);</pre>
+                    <p class="explanation">create a new element and put it in the page</p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Events</h3>
+                <div class="cheatsheet">
+                    <pre class="code">button.addEventListener("click", (event) =&gt; {
+  console.log("clicked");
+});</pre>
+                    <p class="explanation">run a function when the user clicks. works for <strong>submit</strong>, <strong>input</strong>, <strong>keydown</strong> and more</p>
+                </div>
             </article>
         </section>
 
         <section id="git">
             <h2>Git Cheatsheet</h2>
             <article>
-                <h3>Stage & Snapshot</h3>
+                <h3>Stage &amp; Snapshot</h3>
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git status
-                    </pre>                
+                    <pre class="code">git status</pre>
                     <p class="explanation">show modified files in working directory, staged for your next commit</p>
                 </div>
-
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git add [file]
-                    </pre>                
+                    <pre class="code">git add [file]</pre>
                     <p class="explanation">add a file as it looks now to your next commit (stage)</p>
                 </div>
-
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git commit -m "[message]"
-                    </pre>                
+                    <pre class="code">git commit -m "[message]"</pre>
                     <p class="explanation">commit your staged content as a new commit snapshot</p>
                 </div>
             </article>
 
             <article>
-                <h3>Branching & Merging</h3>
+                <h3>Branching &amp; Merging</h3>
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git branch
-                    </pre>                
+                    <pre class="code">git branch</pre>
                     <p class="explanation">list your branches. a <strong>*</strong> will appear next to the currently active branch</p>
                 </div>
-
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git branch <strong>-M</strong> main
-                    </pre>                
+                    <pre class="code">git branch -M main</pre>
                     <p class="explanation">renames the current branch (usually master) to main</p>
                 </div>
-
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git branch [branch-name]
-                    </pre>                
+                    <pre class="code">git branch [branch-name]</pre>
                     <p class="explanation">create a new branch at the current commit</p>
                 </div>
-
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git checkout [branch-name]
-                    </pre>                
+                    <pre class="code">git checkout [branch-name]</pre>
                     <p class="explanation">switch to another branch and check it out into your working directory</p>
                 </div>
-
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git merge [branch-name]
-                    </pre>                
+                    <pre class="code">git merge [branch-name]</pre>
                     <p class="explanation">merge the specified branch’s history into the current one</p>
                 </div>
-
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git log
-                    </pre>                
+                    <pre class="code">git log</pre>
                     <p class="explanation">show all commits in the current branch’s history</p>
                 </div>
+            </article>
 
-                <h3>Share & Update</h3>
+            <article>
+                <h3>Share &amp; Update</h3>
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git remote add [alias] [repository-url]
-                    </pre>                
+                    <pre class="code">git remote add [alias] [repository-url]</pre>
                     <p class="explanation">add a git URL as an alias</p>
                 </div>
-
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git fetch [alias]
-                    </pre>                
+                    <pre class="code">git fetch [alias]</pre>
                     <p class="explanation">fetch down all the branches from that Git remote</p>
                 </div>
-
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git push [alias] [branch-name]
-                    </pre>                
-                    <p class="explanation">Transmit local branch commits to the remote repository branch</p>
+                    <pre class="code">git push [alias] [branch-name]</pre>
+                    <p class="explanation">transmit local branch commits to the remote repository branch</p>
                 </div>
-
                 <div class="cheatsheet">
-                    <pre class="code">
-                        git push -set--upstream origin main
-                    </pre>                
-                    <p class="explanation">Sets it as the upstream tracking branch for future pushes and pulls</p>
+                    <pre class="code">git push --set-upstream origin main</pre>
+                    <p class="explanation">sets it as the upstream tracking branch for future pushes and pulls</p>
                 </div>
             </article>
         </section>
-    </body>
+    </main>
+
+    <footer>
+        <p>Web Development Cheatsheets</p>
+    </footer>
+</body>
 </html>

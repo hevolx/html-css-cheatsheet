@@ -1,86 +1,156 @@
-body {
-  font-family: "Lucida Grande", sans-serif;
-  background-color: darkgrey;
+:root {
+  --bg: darkgrey;
+  --dark: #1f2f2f;
+  --dim: dimgrey;
+  --slate: slategrey;
+  --light: lightgrey;
+  --accent: greenyellow;
 }
-nav {
-  display: inline-flex;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Lucida Grande", sans-serif;
+  background-color: var(--bg);
+  line-height: 1.5;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--dim);
 }
 
 h1 {
-  display: inline;
-  background-color: dimgrey;
-  color: lightgrey;
-  padding: 1em;
-}
-h2 {
-  background-color: slategrey;
-  color: darkslategrey;
-  padding: 1em;
-}
-h3 {
-  background-color: darkslategrey;
-  color: lightslategrey;
-  padding: 1em;
-}
-pre {
-  font-family: "Lucida Sans Typewriter", monospace;
-  background-color: #1f2f2f;
-  color: greenyellow;
-}
-ul li {
-  display: inline-flex;
-  background-color: lightgrey;
-  padding: 2em;
-}
-ul li:hover {
-  background-color: whitesmoke;
-}
-ol li {
-  background-color: #223434;
-  color: antiquewhite;
-  padding: 0 1em 0;
+  margin: 0;
+  padding: 0.75em 1em;
+  font-size: 1.5rem;
+  color: var(--light);
 }
 
-section#HTML pre {
-  line-height: 1.5em;
-  padding: 2em;
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
-section#git pre,
-section#JS pre,
-section#DOM pre,
-section#CSS pre {
-  display: inline-flex;
-  padding: 0.75em 1.25em;
+
+nav a {
+  display: block;
+  padding: 1.25em 1.5em;
+  color: #222;
+  background-color: var(--light);
+  text-decoration: none;
 }
-section#git p,
-section#JS p,
-section#DOM p,
-section#CSS p {
-  display: inline-flex;
-  background-color: dimgrey;
-  color: #dfefef;
-  padding: 0.75em 1.25em;
-}
-section#git a,
-section#JS a,
-section#DOM a,
-section#CSS a {
-  display: inline-flex;
-  background-color: lightgrey;
-  padding: 0.75em;
-}
-section#git a:hover,
-section#JS a:hover,
-section#DOM a:hover,
-section#CSS a:hover {
-  display: inline-flex;
+
+nav a:hover,
+nav a:focus-visible {
   background-color: whitesmoke;
 }
-footer h6 {
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+section {
+  scroll-margin-top: 5rem;
+  margin-bottom: 2em;
+}
+
+h2 {
+  margin: 0;
+  padding: 0.75em 1em;
+  background-color: var(--slate);
+  color: #1b2b2b;
+}
+
+h3 {
+  margin: 0;
+  padding: 0.75em 1em;
+  background-color: darkslategrey;
+  color: #c5d3d9;
+}
+
+article {
+  margin-bottom: 1em;
+}
+
+.cheatsheet {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--dark);
+}
+
+pre.code {
+  flex: 1 1 50%;
+  margin: 0;
+  padding: 0.75em 1.25em;
+  overflow-x: auto;
+  font-family: "Lucida Sans Typewriter", monospace;
+  font-size: 0.9rem;
+  background-color: var(--dark);
+  color: var(--accent);
+}
+
+.explanation {
+  flex: 1 1 50%;
+  margin: 0;
+  padding: 0.75em 1.25em;
+  background-color: var(--dim);
+  color: #dfefef;
+}
+
+.explanation strong {
+  color: white;
+}
+
+footer {
+  padding: 1em 2em;
   text-align: right;
-  background-color: dimgrey;
-  color: lightgrey;
-  padding-right: 2em;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  background-color: var(--dim);
+  color: var(--light);
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  header {
+    position: static;
+  }
+
+  nav,
+  nav ul {
+    width: 100%;
+  }
+
+  nav li {
+    flex: 1;
+  }
+
+  nav a {
+    padding: 1em 0.5em;
+    text-align: center;
+  }
+
+  .cheatsheet {
+    flex-direction: column;
+  }
 }
